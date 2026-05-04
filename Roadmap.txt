@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Konya Ese Dayı Çekici Yol Yardım Oto Kurtarma Hizmetleri | 7/24</title>
+  <meta name="description" content="Konya Ese Dayı Çekici Yol Yardım Oto Kurtarma Hizmetleri — 7/24 hizmet. Ortalama varış süresi 15 dakika. Hemen arayın!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
+:root {
+  --orange: #FF6B00;
+  --orange-light: #FF8C00;
+  --red: #D90000;
+  --red-dark: #AA0000;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark2: #1A1A1A;
+  --dark3: #222222;
+  --gray: #888;
+  --light: #F5F5F5;
+  --white: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ======= HEADER ======= */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,107,0,0.15);
+  padding: 0 24px;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 38px; height: 38px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+
+.logo-text {
+  display: flex; flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text strong {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.logo-text span {
+  font-size: 10px;
+  color: var(--orange);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.btn-call-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: var(--white);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-call-header:hover {
+  background: var(--orange-light);
+  transform: scale(1.03);
+}
+
+.header-badge {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+}
+
+.header-badge span {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* ======= HERO ======= */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 24px 40px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(255,107,0,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(217,0,0,0.07) 0%, transparent 60%),
+    linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,107,0,0.12);
+  border: 1px solid rgba(255,107,0,0.3);
+  color: var(--orange);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  position: relative;
+  animation: fadeDown 0.6s ease both;
+}
+
+.dot-live {
+  width: 8px; height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse-green 1.5s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 10vw, 110px);
+  line-height: 0.9;
+  letter-spacing: 3px;
+  position: relative;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+.hero-title .accent { color: var(--orange); }
+
+.hero-sub {
+  font-size: clamp(15px, 2.5vw, 20px);
+  color: #aaa;
+  margin-top: 16px;
+  font-weight: 500;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.hero-sub strong { color: var(--orange-light); }
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--orange);
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+  box-shadow: 0 0 30px rgba(255,107,0,0.35);
+}
+
+.btn-primary:hover {
+  background: var(--orange-light);
+  box-shadow: 0 0 50px rgba(255,107,0,0.5);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent;
+  color: var(--white);
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.panic-btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: var(--white);
+  text-decoration: none;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  border: none; cursor: pointer;
+  animation: panic-pulse 2s infinite, fadeUp 0.7s 0.4s ease both;
+  box-shadow: 0 0 40px rgba(217,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.panic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shine 2.5s 1s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes panic-pulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(217,0,0,0.4); }
+  50% { box-shadow: 0 0 60px rgba(217,0,0,0.7); }
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+  animation: fadeUp 0.7s 0.5s ease both;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.1);
+  height: 40px;
+  align-self: center;
+}
+
+/* ======= SECTION BASE ======= */
+section { padding: 80px 24px; }
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--orange);
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  color: var(--gray);
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+/* ======= DURUM SEÇİMİ ======= */
+#services { background: var(--dark2); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.service-card {
+  background: var(--dark3);
+  border: 2px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover, .service-card.active {
+  border-color: var(--orange);
+  background: rgba(255,107,0,0.08);
+  transform: translateY(-3px);
+}
+
+.service-card.active::after {
+  content: '✓';
+  position: absolute;
+  top: 8px; right: 10px;
+  color: var(--orange);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.service-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.service-name {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+.service-desc {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+.service-result {
+  background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(255,107,0,0.05));
+  border: 1px solid rgba(255,107,0,0.25);
+  border-radius: 12px;
+  padding: 24px;
+  display: none;
+  animation: slideDown 0.3s ease;
+}
+
+.service-result.show { display: block; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.result-item { text-align: center; }
+
+.result-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: var(--orange);
+}
+
+.result-key {
+  font-size: 12px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ======= FİYAT HESAPLAMA ======= */
+#calculator { background: var(--black); }
+
+.calc-wrap {
+  display: grid;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .calc-wrap { grid-template-columns: 1fr 1fr; }
+}
+
+.calc-form {
+  background: var(--dark2);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+  background: var(--dark3);
+  border: 2px solid rgba(255,255,255,0.08);
+  color: var(--white);
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--orange);
+}
+
+.input-field::placeholder { color: #555; }
+
+.btn-calc {
+  width: 100%;
+  background: var(--orange);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.btn-calc:hover {
+  background: var(--orange-light);
+  box-shadow: 0 0 30px rgba(255,107,0,0.3);
+}
+
+.price-result {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255,107,0,0.08);
+  border: 1px solid rgba(255,107,0,0.25);
+  border-radius: 10px;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+.price-result.show { display: block; }
+
+.price-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.price-note {
+  font-size: 12px;
+  color: var(--gray);
+  margin-top: 6px;
+}
+
+.calc-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-card {
+  background: var(--dark2);
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.info-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.info-title {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.info-text {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+/* ======= GÜVEN ======= */
+#trust { background: var(--dark2); }
+
+.trust-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.live-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74,222,128,0.1);
+  border: 1px solid rgba(74,222,128,0.3);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.testimonial-card {
+  background: var(--dark3);
+  border-radius: 14px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(255,107,0,0.2);
+}
+
+.stars {
+  color: #FACC15;
+  font-size: 16px;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.author-date {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.google-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  font-size: 11px;
+  color: var(--gray);
+  display: flex; align-items: center; gap: 4px;
+}
+
+/* ======= FİLO ======= */
+#fleet { background: var(--black); }
+
+.fleet-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--orange) var(--dark3);
+}
+
+.fleet-card {
+  flex: 0 0 260px;
+  background: var(--dark2);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.2s;
+}
+
+.fleet-card:hover { transform: translateY(-4px); }
+
+.fleet-img {
+  height: 160px;
+  background: var(--dark3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fleet-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,107,0,0.1), transparent);
+}
+
+.fleet-info {
+  padding: 16px;
+}
+
+.fleet-name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.fleet-spec {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.fleet-tag {
+  display: inline-block;
+  background: rgba(255,107,0,0.12);
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+/* ======= BÖLGELER ======= */
+#regions { background: var(--dark2); }
+
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .regions-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.region-card {
+  background: var(--dark3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white);
+  transition: all 0.2s;
+  display: block;
+}
+
+.region-card:hover {
+  border-color: var(--orange);
+  background: rgba(255,107,0,0.07);
+  transform: translateY(-3px);
+}
+
+.region-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.region-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.region-time {
+  font-size: 12px;
+  color: var(--orange);
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* ======= FOOTER ======= */
+footer {
+  background: #050505;
+  border-top: 1px solid rgba(255,107,0,0.15);
+  padding: 48px 24px 24px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-main { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--orange); }
+
+.footer-contact-item {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px;
+}
+
+.contact-icon { font-size: 18px; }
+
+.contact-val { font-size: 14px; color: #ccc; }
+.contact-val strong { display: block; font-size: 16px; color: var(--white); }
+
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366;
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.btn-wa:hover {
+  background: #1db954;
+  box-shadow: 0 0 20px rgba(37,211,102,0.3);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: gap-12px;
+  gap: 12px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.footer-seo {
+  font-size: 12px;
+  color: #444;
+}
+
+/* ======= STICKY BUTTONS ======= */
+.sticky-call {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--orange);
+  color: var(--white);
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  text-decoration: none;
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(255,107,0,0.5);
+  transition: all 0.2s;
+  animation: bounce-in 0.5s 1s ease both;
+}
+
+.sticky-call:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 30px rgba(255,107,0,0.7);
+}
+
+.sticky-panic {
+  position: fixed;
+  bottom: 24px; left: 24px;
+  background: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(217,0,0,0.5);
+  display: flex; align-items: center; gap: 8px;
+  animation: bounce-in 0.5s 1.2s ease both;
+  transition: all 0.2s;
+}
+
+.sticky-panic:hover {
+  background: var(--red-dark);
+  transform: scale(1.03);
+}
+
+@keyframes bounce-in {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======= SCROLL INDICATOR ======= */
+.scroll-arrow {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.3);
+  font-size: 24px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 500px) {
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .panic-btn { font-size: 16px; }
+  .result-grid { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ======= USP STRIP ======= */
+.usp-strip {
+  background: var(--orange);
+  padding: 12px 24px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.usp-inner {
+  display: inline-flex;
+  gap: 48px;
+  animation: marquee 20s linear infinite;
+}
+
+.usp-item {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* extra detail */
+.orange-line {
+  width: 48px; height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin-bottom: 32px;
+}
+
+/* ======= KAZA KARTI ALARM ANİMASYONU ======= */
+.service-card.kaza-card {
+  animation: kaza-flash 1.8s ease-in-out infinite;
+  border-color: rgba(217,0,0,0.4) !important;
+}
+
+@keyframes kaza-flash {
+  0%   { background: var(--dark3); border-color: rgba(217,0,0,0.25); box-shadow: none; }
+  30%  { background: rgba(217,0,0,0.18); border-color: rgba(217,0,0,0.9); box-shadow: 0 0 22px rgba(217,0,0,0.5), inset 0 0 18px rgba(217,0,0,0.12); }
+  60%  { background: var(--dark3); border-color: rgba(217,0,0,0.25); box-shadow: none; }
+  80%  { background: rgba(217,0,0,0.10); border-color: rgba(217,0,0,0.6); box-shadow: 0 0 10px rgba(217,0,0,0.3); }
+  100% { background: var(--dark3); border-color: rgba(217,0,0,0.25); box-shadow: none; }
+}
+
+.service-card.kaza-card .service-icon {
+  animation: kaza-icon 1.8s ease-in-out infinite;
+}
+
+@keyframes kaza-icon {
+  0%, 100% { transform: scale(1);    filter: none; }
+  30%       { transform: scale(1.18); filter: drop-shadow(0 0 6px rgba(217,0,0,0.9)); }
+  60%       { transform: scale(1);    filter: none; }
+  80%       { transform: scale(1.08); filter: drop-shadow(0 0 4px rgba(217,0,0,0.6)); }
+}
+
+.service-card.kaza-card .service-name {
+  color: #ff4444;
+  animation: kaza-text 1.8s ease-in-out infinite;
+}
+
+@keyframes kaza-text {
+  0%, 100% { color: #ff4444; text-shadow: none; }
+  30%       { color: #ff1111; text-shadow: 0 0 8px rgba(217,0,0,0.8); }
+  60%       { color: #ff4444; text-shadow: none; }
+  80%       { color: #ff2222; text-shadow: 0 0 4px rgba(217,0,0,0.5); }
+}
+
+/* Seçili halde farklı efekt */
+.service-card.kaza-card.active {
+  animation: kaza-flash-active 1.2s ease-in-out infinite !important;
+}
+
+@keyframes kaza-flash-active {
+  0%, 100% { background: rgba(217,0,0,0.15); border-color: var(--red); box-shadow: 0 0 20px rgba(217,0,0,0.4); }
+  50%       { background: rgba(217,0,0,0.30); border-color: #ff2222;   box-shadow: 0 0 40px rgba(217,0,0,0.7); }
+}
+```
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <div class="logo-icon">🚛</div>
+        <div class="logo-text">
+          <strong>ESE DAYI ÇEKİCİ</strong>
+          <span>Çekici · Yol Yardım · Oto Kurtarma</span>
+        </div>
+      </a>
+      <div class="header-right">
+
+```
+      📞 HEMEN ARA
+    </a>
+    <div class="header-badge">
+      <span>● Aktif</span> &nbsp;• 7/24 Açık • Ort. varış: 15 dk
+    </div>
+  </div>
+</div>
+```
+
+  </header>
+
+  <!-- HERO -->
+
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+```
+<div class="hero-badge">
+  <span class="dot-live"></span>
+  Şu an aktif · 3 ekip sahada
+</div>
+
+<h1 class="hero-title">
+  ESE DAYI<br/>
+  <span class="accent">ÇEKİCİ</span><br/>
+  YOL YARDIM
+</h1>
+
+<p class="hero-sub">
+  Size en yakın ekip: <strong>8 dk mesafede</strong> &nbsp;·&nbsp; Konya geneli hizmet
+</p>
+
+<div class="hero-ctas">
+  <a href="tel:+905382007337" class="btn-primary"
+     onclick="trackEvent('call_hero')">
+    📞 HEMEN ARA
+  </a>
+  <a href="https://wa.me/905382007337" class="btn-secondary"
+     onclick="trackEvent('whatsapp_hero')">
+    📍 KONUM GÖNDER
+  </a>
+</div>
+
+<a href="tel:+905382007337" class="panic-btn"
+   onclick="trackEvent('panic_hero')">
+  🚨 ACİL — TEK TUŞLA YARDIM
+</a>
+
+<div class="hero-stats">
+  <div class="hero-stat">
+    <div class="hero-stat-num">1200+</div>
+    <div class="hero-stat-label">Başarılı Müdahale</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="hero-stat">
+    <div class="hero-stat-num">15 dk</div>
+    <div class="hero-stat-label">Ort. Varış Süresi</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="hero-stat">
+    <div class="hero-stat-num">7/24</div>
+    <div class="hero-stat-label">Kesintisiz Hizmet</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="hero-stat">
+    <div class="hero-stat-num">4.9★</div>
+    <div class="hero-stat-label">Google Puanı</div>
+  </div>
+</div>
+
+<div class="scroll-arrow">↓</div>
+```
+
+  </section>
+
+  <!-- USP STRIP -->
+
+  <div class="usp-strip">
+    <div class="usp-inner">
+      <span class="usp-item">🚛 Anında Çekici</span>
+      <span class="usp-item">🔧 Yol Yardım</span>
+      <span class="usp-item">⛽ Yakıt Servisi</span>
+      <span class="usp-item">🔋 Akü Takviyesi</span>
+      <span class="usp-item">🔑 Lastik Değişimi</span>
+      <span class="usp-item">💰 Şeffaf Fiyat</span>
+      <!-- duplicate for seamless loop -->
+      <span class="usp-item">🚛 Anında Çekici</span>
+      <span class="usp-item">🔧 Yol Yardım</span>
+      <span class="usp-item">⛽ Yakıt Servisi</span>
+      <span class="usp-item">🔋 Akü Takviyesi</span>
+      <span class="usp-item">🔑 Lastik Değişimi</span>
+      <span class="usp-item">💰 Şeffaf Fiyat</span>
+    </div>
+  </div>
+
+  <!-- DURUM SEÇİMİ -->
+
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-label">Hizmet Seçimi</div>
+      <h2 class="section-title">Sorununuzu Seçin</h2>
+      <p class="section-sub">Size uygun hizmeti hemen belirleyelim</p>
+
+```
+  <div class="services-grid">
+    <div class="service-card" onclick="selectService(this,'cekici')">
+      <span class="service-icon">🔧</span>
+      <div class="service-name">Araç Çalışmıyor</div>
+      <div class="service-desc">Motor arızası, akü problemi</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'lastik')">
+      <span class="service-icon">🔴</span>
+      <div class="service-name">Lastik Patladı</div>
+      <div class="service-desc">Lastik değişimi, stepne</div>
+    </div>
+    <div class="service-card kaza-card" onclick="selectService(this,'kaza')">
+      <span class="service-icon">🚨</span>
+      <div class="service-name">Kaza Yaptım</div>
+      <div class="service-desc">Acil çekici, kaza yardımı</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'yakit')">
+      <span class="service-icon">⛽</span>
+      <div class="service-name">Yakıt Bitti</div>
+      <div class="service-desc">Yakıt servisi, takviye</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'aku')">
+      <span class="service-icon">🔋</span>
+      <div class="service-name">Akü Bitti</div>
+      <div class="service-desc">Akü takviye, değişim</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'kilitli')">
+      <span class="service-icon">🔑</span>
+      <div class="service-name">Araç Kilitlendi</div>
+      <div class="service-desc">Kapı açma hizmeti</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'vinc')">
+      <span class="service-icon">🏗️</span>
+      <div class="service-name">Vinç Gerekiyor</div>
+      <div class="service-desc">Ağır araç, hendek kurtarma</div>
+    </div>
+    <div class="service-card" onclick="selectService(this,'transfer')">
+      <span class="service-icon">🚚</span>
+      <div class="service-name">Araç Transferi</div>
+      <div class="service-desc">Şehirlerarası nakil</div>
+    </div>
+  </div>
+
+  <div class="service-result" id="serviceResult">
+    <div class="result-grid">
+      <div class="result-item">
+        <div class="result-val" id="resService">Çekici</div>
+        <div class="result-key">Önerilen Hizmet</div>
+      </div>
+      <div class="result-item">
+        <div class="result-val" id="resTime">20 dk</div>
+        <div class="result-key">Tahmini Varış</div>
+      </div>
+      <div class="result-item">
+        <div class="result-val" id="resPrice">750₺</div>
+        <div class="result-key">Başlangıç Fiyatı</div>
+      </div>
+    </div>
+    <a href="tel:+905382007337" class="btn-primary" style="width:100%;justify-content:center;display:flex;"
+       onclick="trackEvent('call_service')">
+      📞 HEMEN ARA — HIZLI YANIT GARANTİ
+    </a>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- FİYAT HESAPLAMA -->
+
+  <section id="calculator">
+    <div class="section-inner">
+      <div class="section-label">Şeffaf Fiyatlandırma</div>
+      <h2 class="section-title">Fiyat Hesapla</h2>
+      <p class="section-sub">Gizli ücret yok. Gerçek fiyatı öğrenin.</p>
+
+```
+  <div class="calc-wrap">
+    <div class="calc-form">
+      <div class="input-group">
+        <label class="input-label">Hizmet Türü</label>
+        <select class="input-field" id="calcService">
+          <option value="cekici">Çekici Hizmeti</option>
+          <option value="lastik">Lastik Değişimi</option>
+          <option value="yakit">Yakıt Servisi</option>
+          <option value="aku">Akü Takviye</option>
+          <option value="kilitli">Kapı Açma</option>
+          <option value="vinc">Vinç Hizmeti</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label class="input-label">Tahmini Mesafe (KM)</label>
+        <input type="number" class="input-field" id="calcKm"
+               placeholder="örn: 15" min="1" max="500" />
+      </div>
+      <div class="input-group">
+        <label class="input-label">Araç Tipi</label>
+        <select class="input-field" id="calcVehicle">
+          <option value="1">Otomobil / SUV</option>
+          <option value="1.3">Minibüs / Kamyonet</option>
+          <option value="1.8">Kamyon / TIR</option>
+        </select>
+      </div>
+      <button class="btn-calc" onclick="calcPrice()">
+        💰 FİYATI HESAPLA
+      </button>
+      <div class="price-result" id="priceResult">
+        <div style="font-size:13px;color:var(--gray);margin-bottom:4px;">Yaklaşık Ücret</div>
+        <div class="price-val" id="priceVal">—</div>
+        <div class="price-note">* Kesin fiyat için arayın. KDV dahildir.</div>
+        <a href="tel:+905382007337" class="btn-primary"
+           style="width:100%;justify-content:center;display:flex;margin-top:14px;"
+           onclick="trackEvent('call_calculator')">
+          📞 Bu Fiyatla Çağır
+        </a>
+      </div>
+    </div>
+
+    <div class="calc-info">
+      <div class="info-card">
+        <span class="info-icon">🛡️</span>
+        <div>
+          <div class="info-title">Fiyat Güvencesi</div>
+          <div class="info-text">Telefonda onaylanan fiyat, yerinde değişmez. Gizli ek ücret yok.</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">⚡</span>
+        <div>
+          <div class="info-title">7/24 Çalışıyoruz</div>
+          <div class="info-text">Gece 3'te de, tatil gününde de. Hiçbir zaman kapalı değiliz.</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📍</span>
+        <div>
+          <div class="info-title">Konya Geneli Hizmet</div>
+          <div class="info-text">Merkez, Selçuklu, Karatay, Meram, Kulu ve tüm ilçeler.</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">💳</span>
+        <div>
+          <div class="info-title">Nakit + Kart Ödeme</div>
+          <div class="info-text">Tüm kredi kartları ve banka kartları geçerlidir.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- GÜVEN BLOĞU -->
+
+  <section id="trust">
+    <div class="section-inner">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px;">
+        <div>
+          <div class="section-label">Müşteri Yorumları</div>
+          <h2 class="section-title">Bize Güveniyorlar</h2>
+        </div>
+        <div class="live-counter">
+          <span class="dot-live" style="background:#4ade80"></span>
+          Bugün <strong id="dailyCount">17</strong> araca hizmet verdik
+        </div>
+      </div>
+
+```
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="google-badge">🔵 Google</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">
+        "Gece 02:30'da Konya çıkışında arızalandım. 18 dakikada geldiler. Hem hızlı hem çok uygun fiyatlı. Gerçekten güvenilir bir ekip."
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Ahmet K.</div>
+          <div class="author-date">2 hafta önce</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="google-badge">🔵 Google</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">
+        "Lastik patladı, yağmur yağıyordu. Tek aramada 12 dakikada geldiler. Ekip çok profesyonel ve nazik. Kesinlikle tavsiye ederim."
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">FY</div>
+        <div>
+          <div class="author-name">Fatma Y.</div>
+          <div class="author-date">1 ay önce</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="google-badge">🔵 Google</div>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">
+        "Aracım kaza geçirdi. Hem beni hem aracımı sorunsuz taşıdılar. Fiyat önceden söyledikleriydi, değişmedi. Şeffaf hizmet."
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">ME</div>
+        <div>
+          <div class="author-name">Mustafa E.</div>
+          <div class="author-date">3 hafta önce</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:32px;">
+    <a href="tel:+905382007337" class="btn-primary"
+       style="display:inline-flex;" onclick="trackEvent('call_trust')">
+      📞 Siz de Güvende Olun — Hemen Arayın
+    </a>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- FİLO GALERİ -->
+
+  <section id="fleet">
+    <div class="section-inner">
+      <div class="section-label">Araç Filomuz</div>
+      <h2 class="section-title">Tam Donanımlı Ekip</h2>
+      <p class="section-sub">Her türlü ihtiyaç için doğru araç, doğru ekip sahada</p>
+
+```
+  <div class="fleet-scroll">
+    <div class="fleet-card">
+      <div class="fleet-img">🚚</div>
+      <div class="fleet-info">
+        <div class="fleet-name">Platform Çekici</div>
+        <div class="fleet-spec">Binek & SUV taşıma</div>
+        <div class="fleet-tag">5 Araç</div>
+      </div>
+    </div>
+    <div class="fleet-card">
+      <div class="fleet-img">🏗️</div>
+      <div class="fleet-info">
+        <div class="fleet-name">Ağır Vinç</div>
+        <div class="fleet-spec">TIR & kamyon kurtarma</div>
+        <div class="fleet-tag">2 Araç</div>
+      </div>
+    </div>
+    <div class="fleet-card">
+      <div class="fleet-img">🔧</div>
+      <div class="fleet-info">
+        <div class="fleet-name">Yol Yardım Aracı</div>
+        <div class="fleet-spec">Akü, lastik, yakıt</div>
+        <div class="fleet-tag">4 Araç</div>
+      </div>
+    </div>
+    <div class="fleet-card">
+      <div class="fleet-img">🚛</div>
+      <div class="fleet-info">
+        <div class="fleet-name">Lowbed Taşıyıcı</div>
+        <div class="fleet-spec">Özel & iş makinesi</div>
+        <div class="fleet-tag">2 Araç</div>
+      </div>
+    </div>
+    <div class="fleet-card">
+      <div class="fleet-img">⚡</div>
+      <div class="fleet-info">
+        <div class="fleet-name">Hızlı Müdahale</div>
+        <div class="fleet-spec">Acil çekici takımı</div>
+        <div class="fleet-tag">3 Araç</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- BÖLGELER -->
+
+  <section id="regions">
+    <div class="section-inner">
+      <div class="section-label">Hizmet Bölgeleri</div>
+      <h2 class="section-title">Konya'nın Her Yerindeyiz</h2>
+      <p class="section-sub">Tüm ilçe ve mahallelere hizmet veriyoruz</p>
+
+```
+  <div class="regions-grid">
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Selçuklu</div>
+      <div class="region-time">~10 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Karatay</div>
+      <div class="region-time">~12 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Meram</div>
+      <div class="region-time">~15 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Konya Merkez</div>
+      <div class="region-time">~8 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Kulu</div>
+      <div class="region-time">~25 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Cihanbeyli</div>
+      <div class="region-time">~30 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Ereğli</div>
+      <div class="region-time">~35 dk varış</div>
+    </a>
+    <a href="#" class="region-card">
+      <span class="region-icon">📍</span>
+      <div class="region-name">Tüm Konya</div>
+      <div class="region-time">Konya geneli</div>
+    </a>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo" style="margin-bottom:12px;">
+            <div class="logo-icon">🚛</div>
+            <div class="logo-text">
+              <strong>ESE DAYI ÇEKİCİ</strong>
+              <span>Çekici · Yol Yardım · Oto Kurtarma</span>
+            </div>
+          </div>
+          <p>Konya Ese Dayı Çekici Yol Yardım Oto Kurtarma Hizmetleri olarak 7/24 güvenilir hizmet veriyoruz. Panikte değil, güvende olun.</p>
+        </div>
+
+```
+    <div>
+      <div class="footer-title">Hizmetlerimiz</div>
+      <ul class="footer-links">
+        <li><a href="#">Çekici Hizmeti</a></li>
+        <li><a href="#">Yol Yardım</a></li>
+        <li><a href="#">Akü Takviye</a></li>
+        <li><a href="#">Lastik Değişimi</a></li>
+        <li><a href="#">Yakıt Servisi</a></li>
+        <li><a href="#">Araç Transferi</a></li>
+        <li><a href="#">Vinç Hizmeti</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">İletişim</div>
+      <div class="footer-contact-item">
+        <span class="contact-icon">📞</span>
+        <div class="contact-val">
+          <strong>0538 200 73 37</strong>
+          7/24 Açık Hat
+        </div>
+      </div>
+      <div class="footer-contact-item">
+        <span class="contact-icon">📍</span>
+        <div class="contact-val">
+          Konya Merkez<br/>Tüm ilçelere hizmet
+        </div>
+      </div>
+      <a href="https://wa.me/905382007337" class="btn-wa"
+         onclick="trackEvent('whatsapp_footer')">
+        💬 WhatsApp ile Yaz
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Konya Ese Dayı Çekici Yol Yardım Oto Kurtarma Hizmetleri. Tüm hakları saklıdır.</div>
+    <div class="footer-seo">Konya çekici · Konya oto kurtarma · 7/24 yol yardım</div>
+  </div>
+</div>
+```
+
+  </footer>
+
+  <!-- STICKY BUTTONS -->
+
+<a href="tel:+905382007337" class="sticky-call"
+title="Hemen Ara" onclick="trackEvent('call_sticky')">📞</a>
+
+<a href="tel:+905382007337" class="sticky-panic"
+onclick="trackEvent('panic_sticky')">🚨 ACİL</a>
+
+  <script>
+    // === ANALYTICS TRACKING ===
+    function trackEvent(name) {
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('event', name, { event_category: 'engagement' });
+      }
+      console.log('Track:', name);
+    }
+
+    // === SERVICE SELECTOR ===
+    const serviceData = {
+      cekici:   { service: 'Çekici',        time: '20 dk', price: '750₺+' },
+      lastik:   { service: 'Lastik Değişim', time: '12 dk', price: '250₺+' },
+      kaza:     { service: 'Acil Çekici',   time: '15 dk', price: '900₺+' },
+      yakit:    { service: 'Yakıt Servisi', time: '10 dk', price: '150₺+' },
+      aku:      { service: 'Akü Takviye',   time: '10 dk', price: '200₺+' },
+      kilitli:  { service: 'Kapı Açma',     time: '12 dk', price: '300₺+' },
+      vinc:     { service: 'Vinç',          time: '25 dk', price: '1200₺+' },
+      transfer: { service: 'Transfer',      time: '30 dk', price: '1500₺+' },
+    };
+
+    function selectService(el, type) {
+      document.querySelectorAll('.service-card').forEach(c => c.classList.remove('active'));
+      el.classList.add('active');
+
+      const d = serviceData[type];
+      document.getElementById('resService').textContent = d.service;
+      document.getElementById('resTime').textContent    = d.time;
+      document.getElementById('resPrice').textContent   = d.price;
+      document.getElementById('serviceResult').classList.add('show');
+      document.getElementById('serviceResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      trackEvent('service_select_' + type);
+    }
+
+    // === PRICE CALCULATOR ===
+    const basePrices = {
+      cekici:   { base: 500, km: 12 },
+      lastik:   { base: 200, km: 0  },
+      yakit:    { base: 120, km: 5  },
+      aku:      { base: 180, km: 5  },
+      kilitli:  { base: 280, km: 5  },
+      vinc:     { base: 900, km: 20 },
+    };
+
+    function calcPrice() {
+      const type    = document.getElementById('calcService').value;
+      const km      = parseFloat(document.getElementById('calcKm').value) || 10;
+      const vehicle = parseFloat(document.getElementById('calcVehicle').value);
+      const p       = basePrices[type] || { base: 500, km: 12 };
+      const total   = Math.round((p.base + p.km * km) * vehicle / 50) * 50;
+      document.getElementById('priceVal').textContent = total + '₺';
+      const el = document.getElementById('priceResult');
+      el.classList.add('show');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      trackEvent('price_calc');
+    }
+
+    // === LIVE COUNTER (simulated) ===
+    function updateCounter() {
+      const base = 17;
+      const extra = Math.floor(Date.now() / 3600000) % 5;
+      document.getElementById('dailyCount').textContent = base + extra;
+    }
+    updateCounter();
+    setInterval(updateCounter, 60000);
+
+    // === SCROLL HEADER TINT ===
+    window.addEventListener('scroll', () => {
+      const h = document.querySelector('header');
+      if (window.scrollY > 60) {
+        h.style.background = 'rgba(10,10,10,0.98)';
+      } else {
+        h.style.background = 'rgba(10,10,10,0.92)';
+      }
+    });
+  </script>
+
+</body>
+</html>
