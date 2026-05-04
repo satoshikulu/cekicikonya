@@ -4,9 +4,12 @@
   "description": "Konya Ese Dayi Cekici Yol Yardim Oto Kurtarma web sitesi",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "build": "npx vite build",
+    "preview": "npx vite preview",
     "optimize-images": "powershell -ExecutionPolicy Bypass -File optimize-images.ps1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "keywords": [],
   "author": "",
