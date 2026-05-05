@@ -216,42 +216,25 @@ export default function App() {
             <h1>Konya Ese Dayi Cekici Yol Yardim Oto Kurtarma Hizmetleri</h1>
             <p className={`hero-sub ${locationLive ? "is-live" : ""}`}>{locationText}</p>
             <div className="quick-emergency">
-              <h3>Tek Tık Acil Çağrı Sistemi</h3>
-              <div className="quick-grid quick-grid-two">
-                <button type="button" className="btn btn-ghost" onClick={requestDynamicLocation}>
-                  Konumumu al
-                </button>
+              <p className="quick-title">Tek Tık Acil Çağrı Sistemi</p>
+              <div className="quick-grid-two">
+                <a href={`tel:${phoneRaw}`} className="btn btn-glass-call" onClick={() => trackEvent("hero_call_click")}>
+                  Hemen Ara
+                </a>
                 <a
-                  className="btn btn-primary"
                   href={quickWhatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={() => trackEvent("quick_whatsapp_click")}
+                  className="btn btn-glass-wa"
+                  onClick={() => trackEvent("hero_whatsapp_click")}
                 >
                   Konumumu Gönder
                 </a>
               </div>
-            </div>
-            <div className="hero-actions">
-              <a href={`tel:${phoneRaw}`} className="btn btn-primary" onClick={() => trackEvent("hero_call_click")}>
-                Arama Baslat
-              </a>
-              <a
-                href={quickWhatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-ghost"
-                onClick={() => {
-                  requestDynamicLocation();
-                  trackEvent("hero_whatsapp_click");
-                }}
-              >
-                Konum Gonder
+              <a className="panic-btn" href={`tel:${phoneRaw}`} onClick={() => trackEvent("panic_click")}>
+                Acil Yardım Hattı
               </a>
             </div>
-            <a className="panic-btn" href={`tel:${phoneRaw}`}>
-              Acil Yardim Hatti
-            </a>
           </div>
         </section>
 
