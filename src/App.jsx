@@ -419,15 +419,15 @@ export default function App() {
               <h4>İletişim</h4>
               <div className="footer-contact">
                 <div className="contact-item">
-                  <span className="contact-icon">📞</span>
+                  <span className="contact-icon">Tel</span>
                   <div><strong>Telefon</strong><a href={`tel:${phoneRaw}`}>{phoneText}</a></div>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-icon">💬</span>
+                  <span className="contact-icon">WA</span>
                   <div><strong>WhatsApp</strong><a href={whatsappLink} target="_blank" rel="noreferrer">{phoneText}</a></div>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-icon">📍</span>
+                  <span className="contact-icon">Adres</span>
                   <div><strong>Adres</strong><p>Mehmet Akif, Akide Sk. No:4 D:A, 42100 Selçuklu/Konya</p></div>
                 </div>
               </div>
