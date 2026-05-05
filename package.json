@@ -4,7 +4,7 @@
   "description": "Konya Ese Dayi Cekici Yol Yardim Oto Kurtarma web sitesi",
   "scripts": {
     "dev": "vite",
-    "build": "node node_modules/vite/bin/vite.js build",
+    "build": "node node_modules/vite/bin/vite.js build --emptyOutDir",
     "preview": "node node_modules/vite/bin/vite.js preview",
     "optimize-images": "powershell -ExecutionPolicy Bypass -File optimize-images.ps1"
   },
