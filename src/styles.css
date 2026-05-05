@@ -281,12 +281,13 @@ h3 {
 }
 
 
+.quick-grid-two {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 16px;
 }
 
-
+.hero-actions {
   margin-top: 24px;
   display: flex;
   justify-content: center;
