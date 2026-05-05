@@ -68,6 +68,11 @@ export default function App() {
   const [progress, setProgress] = useState(0);
   const [price, setPrice] = useState(null);
 
+  const [b2bFirma, setB2bFirma] = useState("");
+  const [b2bYetkili, setB2bYetkili] = useState("");
+  const [b2bTelefon, setB2bTelefon] = useState("");
+  const [b2bTalep, setB2bTalep] = useState("");
+
   const location = useLocation();
 
   const trackEvent = (eventName, params = {}) => {
@@ -342,18 +347,26 @@ export default function App() {
               <form className="b2b-form" onSubmit={(e) => {
                 e.preventDefault();
                 trackEvent("b2b_form_submit");
-                window.open(`${whatsappLink}?text=${encodeURIComponent("Merhaba, kurumsal anlaşma teklifi almak istiyorum.")}`, "_blank", "noopener,noreferrer");
+                const msg = [
+                  "Merhaba, kurumsal anlaşma teklifi almak istiyorum.",
+                  "",
+                  `Firma Adı: ${b2bFirma}`,
+                  `Yetkili: ${b2bYetkili}`,
+                  `Telefon: ${b2bTelefon}`,
+                  `Talep Türü: ${b2bTalep}`,
+                ].join("\n");
+                window.open(`${whatsappLink}?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
               }}>
                 <h3>Kurumsal Teklif Formu</h3>
                 <div className="b2b-form-grid">
-                  <input type="text" placeholder="Firma adı" required />
-                  <input type="text" placeholder="Yetkili ad soyad" required />
-                  <input type="tel" placeholder="Telefon" required />
-                  <select required defaultValue="">
+                  <input type="text" placeholder="Firma adı" required value={b2bFirma} onChange={(e) => setB2bFirma(e.target.value)} />
+                  <input type="text" placeholder="Yetkili ad soyad" required value={b2bYetkili} onChange={(e) => setB2bYetkili(e.target.value)} />
+                  <input type="tel" placeholder="Telefon" required value={b2bTelefon} onChange={(e) => setB2bTelefon(e.target.value)} />
+                  <select required value={b2bTalep} onChange={(e) => setB2bTalep(e.target.value)}>
                     <option value="" disabled>Talep türü seçin</option>
-                    <option value="sigorta">Sigorta anlaşması</option>
-                    <option value="filo">Filo sözleşmesi</option>
-                    <option value="galeri">Galeri/servis ortaklığı</option>
+                    <option value="Sigorta anlaşması">Sigorta anlaşması</option>
+                    <option value="Filo sözleşmesi">Filo sözleşmesi</option>
+                    <option value="Galeri/servis ortaklığı">Galeri/servis ortaklığı</option>
                   </select>
                 </div>
                 <button type="submit" className="btn btn-primary">Teklif Al</button>
