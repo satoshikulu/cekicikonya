@@ -1013,7 +1013,6 @@ h3 {
   height: 300px;
   border: 0;
   border-radius: 0;
-  filter: grayscale(100%) invert(90%);
 }
 
 /* ======= LIGHTBOX ======= */

@@ -16,12 +16,12 @@ const serviceImages = {
 };
 
 const services = [
-  { key: "cekici", icon: "🔧", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici },
-  { key: "lastik", icon: "🛞", name: "Lastik Patladı", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastiğim patladı. Lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
-  { key: "kaza", icon: "🚨", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza },
-  { key: "yakit", icon: "⛽", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit },
-  { key: "aku", icon: "🔋", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku },
-  { key: "kilitli", icon: "🔑", name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", waMsg: "Merhaba, aracım kilitlendi. Kapı açma hizmeti için fiyat almak istiyorum.", image: serviceImages.kilitli },
+  { key: "cekici", icon: null, name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici },
+  { key: "lastik", icon: null, name: "Lastik Patladı", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastiğim patladı. Lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
+  { key: "kaza", icon: null, name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza },
+  { key: "yakit", icon: null, name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit },
+  { key: "aku", icon: null, name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku },
+  { key: "kilitli", icon: null, name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", waMsg: "Merhaba, aracım kilitlendi. Kapı açma hizmeti için fiyat almak istiyorum.", image: serviceImages.kilitli },
 ];
 
 const calcBase = {
@@ -259,7 +259,6 @@ export default function App() {
                   <div className="service-image-overlay" />
                 </div>
                 <div className="service-content">
-                  <div className="service-icon">{service.icon}</div>
                   <h3>{service.name}</h3>
                   <p>{service.desc}</p>
                   <div className="service-meta">
