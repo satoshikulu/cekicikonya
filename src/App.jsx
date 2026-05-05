@@ -16,12 +16,12 @@ const serviceImages = {
 };
 
 const services = [
-  { key: "cekici", icon: "🔧", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", price: "800 TL+", image: serviceImages.cekici },
-  { key: "lastik", icon: "🛞", name: "Lastik Patladı", desc: "Lastik değişimi", time: "14 dk", price: "350 TL+", image: serviceImages.lastik },
-  { key: "kaza", icon: "🚨", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", price: "1100 TL+", image: serviceImages.kaza },
-  { key: "yakit", icon: "⛽", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", price: "300 TL+", image: serviceImages.yakit },
-  { key: "aku", icon: "🔋", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", price: "300 TL+", image: serviceImages.aku },
-  { key: "kilitli", icon: "🔑", name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", price: "450 TL+", image: serviceImages.kilitli },
+  { key: "cekici", icon: "🔧", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici },
+  { key: "lastik", icon: "🛞", name: "Lastik Patladı", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastiğim patladı. Lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
+  { key: "kaza", icon: "🚨", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza },
+  { key: "yakit", icon: "⛽", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit },
+  { key: "aku", icon: "🔋", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku },
+  { key: "kilitli", icon: "🔑", name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", waMsg: "Merhaba, aracım kilitlendi. Kapı açma hizmeti için fiyat almak istiyorum.", image: serviceImages.kilitli },
 ];
 
 const calcBase = {
@@ -232,7 +232,7 @@ export default function App() {
                 </a>
               </div>
               <a className="panic-btn" href={`tel:${phoneRaw}`} onClick={() => trackEvent("panic_click")}>
-                Acil Yardım Hattı
+                Acil Yardım Butonu
               </a>
             </div>
           </div>
@@ -264,16 +264,35 @@ export default function App() {
                   <p>{service.desc}</p>
                   <div className="service-meta">
                     <span className="service-time">{service.time}</span>
-                    <span className="service-price">{service.price}</span>
+                    <a
+                      href={`${whatsappLink}?text=${encodeURIComponent(service.waMsg)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="service-price-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        trackEvent("service_price_click", { service: service.key });
+                      }}
+                    >
+                      Fiyat Al →
+                    </a>
                   </div>
                 </div>
               </button>
             ))}
           </div>
           <div className="service-result">
-            <p>Onerilen Hizmet: {activeService.name}</p>
-            <p>Tahmini varis: {activeService.time}</p>
-            <p>Baslangic ucreti: {activeService.price}</p>
+            <p>Önerilen Hizmet: {activeService.name}</p>
+            <p>Tahmini varış: {activeService.time}</p>
+            <a
+              href={`${whatsappLink}?text=${encodeURIComponent(activeService.waMsg)}`}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-whatsapp full"
+              onClick={() => trackEvent("service_result_price_click", { service: activeService.key })}
+            >
+              Ücretsiz Fiyat Al
+            </a>
           </div>
         </section>
 
