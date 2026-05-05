@@ -22,13 +22,21 @@
     <link rel="canonical" href="https://www.esedayicekici.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_ME"></script>
+    <!-- Non-blocking font load -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
+    <!-- Fallback fonts prevent CLS while web fonts load -->
+    <style>
+      body { font-family: system-ui, -apple-system, sans-serif; }
+      .brand-mark, h1, h2, h3, h4, .quick-title, .footer-logo, .footer-section h4 { font-family: system-ui, -apple-system, sans-serif; }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P28PZHMFKW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
-      gtag("config", "G-REPLACE_ME");
+      gtag("config", "G-P28PZHMFKW");
     </script>
     <script type="application/ld+json">
       {
@@ -54,8 +62,10 @@
         "url": "https://www.esedayicekici.com/"
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-CX6qAzIV.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Dz74MwAb.css">
+    <script type="module" crossorigin src="/assets/index-D0EYjcFW.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-jpDsebLB.js">
+    <link rel="modulepreload" crossorigin href="/assets/vendor-DiZJQJ_8.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BWRsR3Nv.css">
   </head>
   <body>
     <div id="root"></div>

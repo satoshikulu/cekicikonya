@@ -14,12 +14,12 @@ const phoneText = "0533 510 73 37";
 const whatsappLink = `https://wa.me/90${phoneRaw}`;
 
 const serviceImages = {
-  cekici: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=500&auto=format&fit=crop&q=60",
-  lastik: "https://plus.unsplash.com/premium_photo-1683141571145-4676ddf91387?w=500&auto=format&fit=crop&q=60",
-  kaza: "https://images.unsplash.com/photo-1687867451910-28941a460f35?w=500&auto=format&fit=crop&q=60",
-  yakit: "https://images.unsplash.com/photo-1765211003392-7eeb5250d988?w=500&auto=format&fit=crop&q=60",
-  aku: "https://plus.unsplash.com/premium_photo-1661770030805-0abb8fd880f1?w=500&auto=format&fit=crop&q=60",
-  kilitli: "https://images.unsplash.com/photo-1771340742493-52fbd5476ccb?w=500&auto=format&fit=crop&q=60",
+  cekici: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=400&auto=format&fit=crop&q=50&fm=webp",
+  lastik: "https://plus.unsplash.com/premium_photo-1683141571145-4676ddf91387?w=400&auto=format&fit=crop&q=50&fm=webp",
+  kaza: "https://images.unsplash.com/photo-1687867451910-28941a460f35?w=400&auto=format&fit=crop&q=50&fm=webp",
+  yakit: "https://images.unsplash.com/photo-1765211003392-7eeb5250d988?w=400&auto=format&fit=crop&q=50&fm=webp",
+  aku: "https://plus.unsplash.com/premium_photo-1661770030805-0abb8fd880f1?w=400&auto=format&fit=crop&q=50&fm=webp",
+  kilitli: "https://images.unsplash.com/photo-1771340742493-52fbd5476ccb?w=400&auto=format&fit=crop&q=50&fm=webp",
 };
 
 const services = [
@@ -67,6 +67,7 @@ export default function App() {
   const [loadingStep, setLoadingStep] = useState("");
   const [progress, setProgress] = useState(0);
   const [price, setPrice] = useState(null);
+  const [galleryExpanded, setGalleryExpanded] = useState(false);
 
   const [b2bFirma, setB2bFirma] = useState("");
   const [b2bYetkili, setB2bYetkili] = useState("");
@@ -169,7 +170,13 @@ export default function App() {
   ].join("\n"), []);
 
   const priceWhatsappHref = `${whatsappLink}?text=${encodeURIComponent(priceWhatsappMessage)}`;
+  // Hero image: always show first image for LCP, slideshow only affects background
+  const heroImage = galleryImages[0];
   const activeImage = useMemo(() => galleryImages[slide] ?? galleryImages[0], [slide]);
+  const visibleGallery = useMemo(
+    () => galleryExpanded ? galleryImages : galleryImages.slice(0, 6),
+    [galleryExpanded]
+  );
 
   const navLinks = [
     { to: "/", label: "Anasayfa" },
@@ -216,7 +223,25 @@ export default function App() {
         <Route path="/" element={
           <main>
             <section className="hero">
-              <img src={activeImage.src} alt={activeImage.alt} className="hero-image" />
+              {/* LCP image: always the first gallery image, eager + high priority */}
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                className="hero-image"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+              />
+              {/* Slideshow overlay image (fades in after first) */}
+              {slide > 0 && (
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="hero-image hero-image-slide"
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+              )}
               <div className="hero-overlay" />
               <div className="container hero-content">
                 <p className="badge">365 Gun 24 Saat Acik</p>
@@ -282,8 +307,8 @@ export default function App() {
               <div className="container calc-grid">
                 <div className="calc-panel">
                   <h2>Fiyat Hesaplayıcı</h2>
-                  <label>Hizmet
-                    <select value={calcService} onChange={(e) => setCalcService(e.target.value)}>
+                  <label htmlFor="calc-service">Hizmet
+                    <select id="calc-service" value={calcService} onChange={(e) => setCalcService(e.target.value)}>
                       <option value="cekici">Araç Çalışmıyor</option>
                       <option value="lastik">Lastik Patladı</option>
                       <option value="kaza">Kaza Yaptım</option>
@@ -292,11 +317,11 @@ export default function App() {
                       <option value="kilitli">Araç Kilitlendi</option>
                     </select>
                   </label>
-                  <label>Mesafe (km)
-                    <input type="number" min="1" max="300" placeholder="Orn: 12" value={km} onChange={(e) => setKm(e.target.value)} />
+                  <label htmlFor="calc-km">Mesafe (km)
+                    <input id="calc-km" type="number" min="1" max="300" placeholder="Orn: 12" value={km} onChange={(e) => setKm(e.target.value)} />
                   </label>
-                  <label>Araç tipi
-                    <select value={vehicleMultiplier} onChange={(e) => setVehicleMultiplier(e.target.value)}>
+                  <label htmlFor="calc-vehicle">Araç tipi
+                    <select id="calc-vehicle" value={vehicleMultiplier} onChange={(e) => setVehicleMultiplier(e.target.value)}>
                       <option value="1">Otomobil / SUV</option>
                       <option value="1.25">Minibüs / Kamyonet</option>
                       <option value="1.65">Kamyon / Tır</option>
@@ -359,10 +384,10 @@ export default function App() {
               }}>
                 <h3>Kurumsal Teklif Formu</h3>
                 <div className="b2b-form-grid">
-                  <input type="text" placeholder="Firma adı" required value={b2bFirma} onChange={(e) => setB2bFirma(e.target.value)} />
-                  <input type="text" placeholder="Yetkili ad soyad" required value={b2bYetkili} onChange={(e) => setB2bYetkili(e.target.value)} />
-                  <input type="tel" placeholder="Telefon" required value={b2bTelefon} onChange={(e) => setB2bTelefon(e.target.value)} />
-                  <select required value={b2bTalep} onChange={(e) => setB2bTalep(e.target.value)}>
+                  <input type="text" placeholder="Firma adı" required value={b2bFirma} onChange={(e) => setB2bFirma(e.target.value)} aria-label="Firma adı" />
+                  <input type="text" placeholder="Yetkili ad soyad" required value={b2bYetkili} onChange={(e) => setB2bYetkili(e.target.value)} aria-label="Yetkili ad soyad" />
+                  <input type="tel" placeholder="Telefon" required value={b2bTelefon} onChange={(e) => setB2bTelefon(e.target.value)} aria-label="Telefon" />
+                  <select required value={b2bTalep} onChange={(e) => setB2bTalep(e.target.value)} aria-label="Talep türü seçin">
                     <option value="" disabled>Talep türü seçin</option>
                     <option value="Sigorta anlaşması">Sigorta anlaşması</option>
                     <option value="Filo sözleşmesi">Filo sözleşmesi</option>
@@ -379,7 +404,7 @@ export default function App() {
                 <p>Profesyonel ekip ve güvenli taşıma süreci.</p>
               </div>
               <div className="gallery-grid">
-                {galleryImages.map((item, index) => (
+                {visibleGallery.map((item, index) => (
                   <figure key={item.src} className="gallery-item" onClick={() => openLightbox(index)}
                     role="button" tabIndex={0}
                     onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLightbox(index); } }}
@@ -390,6 +415,17 @@ export default function App() {
                   </figure>
                 ))}
               </div>
+              {!galleryExpanded && galleryImages.length > 6 && (
+                <div style={{ textAlign: "center", marginTop: "16px" }}>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => setGalleryExpanded(true)}
+                  >
+                    Tüm Görselleri Gör ({galleryImages.length - 6} daha)
+                  </button>
+                </div>
+              )}
             </section>
           </main>
         } />
