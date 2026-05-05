@@ -1,0 +1,102 @@
+import { Link } from "react-router-dom";
+
+export const blogYazilari = [
+  {
+    slug: "konya-cekici-hizmeti",
+    baslik: "Konya'da Çekici Hizmeti Nasıl Çalışır?",
+    ozet: "Aracınız yolda kaldığında ne yapmalısınız? Konya'da çekici hizmeti süreci, dikkat edilmesi gerekenler ve doğru firma seçimi hakkında bilmeniz gerekenler.",
+    tarih: "2026-05-01",
+    icerik: `
+      <p>Konya'da araç arızası yaşadığınızda panik yapmak yerine doğru adımları atmak hem güvenliğiniz hem de cebiniz için önemlidir.</p>
+      <h2>Araç Yolda Kalınca İlk Yapılması Gerekenler</h2>
+      <p>Aracınız hareket edemez hale geldiğinde öncelikle güvenli bir alana çekin. Dörtlü flaşörlerinizi açın ve reflektörlerinizi koyun. Ardından güvenilir bir çekici firmasını arayın.</p>
+      <h2>Doğru Çekici Firması Nasıl Seçilir?</h2>
+      <p>7/24 hizmet veren, şeffaf fiyatlandırma sunan ve deneyimli ekibe sahip bir firma tercih edin. Konya Ese Dayı Çekici olarak ortalama 15 dakikada yanınızdayız.</p>
+      <h2>Çekici Ücretleri Neye Göre Belirlenir?</h2>
+      <p>Çekici ücreti; mesafe, araç tipi ve hizmet türüne göre değişir. Şeffaf fiyatlandırma için önceden bilgi alın.</p>
+    `,
+  },
+  {
+    slug: "lastik-patlarsa-ne-yapilir",
+    baslik: "Yolda Lastik Patlarsa Ne Yapmalısınız?",
+    ozet: "Seyir halindeyken lastik patlaması tehlikeli olabilir. Doğru müdahale adımları ve Konya'da lastik değişim hizmeti hakkında bilgiler.",
+    tarih: "2026-05-02",
+    icerik: `
+      <p>Seyir halindeyken lastik patlaması ani ve tehlikeli bir durumdur. Sakin kalmak ve doğru adımları atmak büyük önem taşır.</p>
+      <h2>Lastik Patladığında Ne Yapmalısınız?</h2>
+      <p>Direksiyonu sıkıca tutun, ani fren yapmayın. Yavaşça yol kenarına çekin. Dörtlü flaşörlerinizi açın ve güvenli bir mesafeye geçin.</p>
+      <h2>Stepneniz Yoksa Ne Olur?</h2>
+      <p>Stepneniz yoksa veya değiştirmeyi bilmiyorsanız yol yardım hizmeti alabilirsiniz. Konya Ese Dayı Çekici olarak yerinde lastik değişimi yapıyoruz.</p>
+      <h2>Lastik Değişimi Ne Kadar Sürer?</h2>
+      <p>Profesyonel ekibimizle lastik değişimi ortalama 15-20 dakika sürmektedir.</p>
+    `,
+  },
+  {
+    slug: "aku-bitmesi-nedenleri",
+    baslik: "Araç Aküsü Neden Biter? Belirtileri ve Çözümleri",
+    ozet: "Özellikle kış aylarında sık yaşanan akü sorunları, nedenleri ve Konya'da akü takviye hizmeti hakkında kapsamlı rehber.",
+    tarih: "2026-05-03",
+    icerik: `
+      <p>Araç aküsünün bitmesi, özellikle soğuk kış sabahlarında sık karşılaşılan bir sorundur. Nedenleri ve çözümleri hakkında bilgi sahibi olmak sizi hazırlıklı kılar.</p>
+      <h2>Akü Neden Biter?</h2>
+      <p>Uzun süre araç kullanmamak, farları açık unutmak, eski akü ve soğuk hava akünün bitmesinin başlıca nedenleridir.</p>
+      <h2>Akü Bittiğinin Belirtileri</h2>
+      <p>Motor güçlükle çalışıyor, farlar sönük yanıyor veya araç hiç çalışmıyorsa akünüz bitmiş olabilir.</p>
+      <h2>Akü Takviye Hizmeti</h2>
+      <p>Konya Ese Dayı Çekici olarak yerinde akü takviye ve gerekirse akü değişimi hizmeti sunuyoruz. Ortalama 11 dakikada yanınızdayız.</p>
+    `,
+  },
+  {
+    slug: "kaza-sonrasi-yapilmasi-gerekenler",
+    baslik: "Trafik Kazası Sonrası Yapılması Gerekenler",
+    ozet: "Trafik kazası geçirdikten sonra hangi adımları atmalısınız? Sigorta işlemleri, çekici çağırma ve yasal süreç hakkında rehber.",
+    tarih: "2026-05-04",
+    icerik: `
+      <p>Trafik kazası stresli bir deneyimdir. Sakin kalmak ve doğru adımları atmak hem güvenliğiniz hem de sigorta süreciniz için kritiktir.</p>
+      <h2>Kaza Anında İlk Adımlar</h2>
+      <p>Önce güvenliği sağlayın. Yaralı varsa 112'yi arayın. Araçları mümkünse yol kenarına çekin ve dörtlü flaşörleri açın.</p>
+      <h2>Sigorta ve Tutanak</h2>
+      <p>Karşı tarafla kaza tespit tutanağı doldurun. Fotoğraf çekin. Sigorta şirketinizi bilgilendirin.</p>
+      <h2>Çekici Çağırma</h2>
+      <p>Araç hareket edemiyorsa sigorta anlaşmalı çekici firmasını arayın. Konya Ese Dayı Çekici sigorta şirketleriyle anlaşmalı çalışmaktadır.</p>
+    `,
+  },
+  {
+    slug: "konya-yol-yardim-hizmeti",
+    baslik: "Konya'da 7/24 Yol Yardım Hizmeti",
+    ozet: "Konya merkez ve ilçelerinde sunulan yol yardım hizmetleri, kapsama alanı ve hizmet detayları hakkında kapsamlı bilgi.",
+    tarih: "2026-05-05",
+    icerik: `
+      <p>Konya'da yol yardım hizmeti, araç sahiplerinin beklenmedik durumlarda hızla destek alabilmesi için kritik bir hizmettir.</p>
+      <h2>Yol Yardım Hizmeti Nedir?</h2>
+      <p>Yol yardım; lastik değişimi, akü takviye, yakıt servisi, kapı açma ve çekici hizmetlerini kapsayan kapsamlı bir destek paketidir.</p>
+      <h2>Konya'da Hizmet Bölgelerimiz</h2>
+      <p>Selçuklu, Meram, Karatay başta olmak üzere Konya'nın tüm ilçelerine hizmet veriyoruz. Şehir dışı ve otoyol hizmetleri de sunulmaktadır.</p>
+      <h2>Neden Ese Dayı Çekici?</h2>
+      <p>15+ yıllık deneyim, ortalama 15 dakika varış süresi ve şeffaf fiyatlandırmayla Konya'nın güvenilir yol yardım firmasıyız.</p>
+    `,
+  },
+];
+
+export default function Blog() {
+  return (
+    <main className="page-content">
+      <div className="container">
+        <h1>Blog</h1>
+        <p className="page-lead">
+          Yol yardım, oto kurtarma ve araç bakımı hakkında faydalı bilgiler.
+        </p>
+        <div className="blog-grid">
+          {blogYazilari.map((yazi) => (
+            <article key={yazi.slug} className="blog-card">
+              <time className="blog-tarih">{yazi.tarih}</time>
+              <h2><Link to={`/blog/${yazi.slug}`}>{yazi.baslik}</Link></h2>
+              <p>{yazi.ozet}</p>
+              <Link to={`/blog/${yazi.slug}`} className="blog-devami">Devamını Oku →</Link>
+            </article>
+          ))}
+        </div>
+      </div>
+    </main>
+  );
+}
