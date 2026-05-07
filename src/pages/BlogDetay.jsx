@@ -1,9 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import { blogYazilari } from "./Blog";
+import useSeo from "../useSeo";
 
 export default function BlogDetay() {
   const { slug } = useParams();
   const yazi = blogYazilari.find((y) => y.slug === slug);
+
+  useSeo(yazi ? {
+    title: `${yazi.baslik} | Konya Ese Dayı Çekici`,
+    description: yazi.ozet,
+    canonical: `https://www.esedayicekici.com/blog/${yazi.slug}`,
+  } : {
+    title: "Yazı Bulunamadı | Konya Ese Dayı Çekici",
+    description: "Aradığınız blog yazısı bulunamadı.",
+    canonical: "https://www.esedayicekici.com/blog",
+  });
 
   if (!yazi) {
     return (

@@ -24,7 +24,7 @@ const serviceImages = {
 
 const services = [
   { key: "cekici", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici },
-  { key: "lastik", name: "Lastik Patladı", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastiğim patladı. Lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
+  { key: "lastik", name: "Lastik Değişimi", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
   { key: "kaza", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza },
   { key: "yakit", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit },
   { key: "aku", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku },
@@ -32,8 +32,8 @@ const services = [
 ];
 
 const calcBase = {
-  cekici: { fixed: 650, perKm: 15 },
-  kaza: { fixed: 900, perKm: 22 },
+  cekici: { base: 1000, threshold: 20, perKmOver: 22 },
+  kaza: { base: 1000, threshold: 20, perKmOver: 22 },
   lastik: { fixed: 250, perKm: 0 },
   yakit: { fixed: 260, perKm: 0 },
   aku: { fixed: 220, perKm: 0 },
@@ -148,7 +148,15 @@ export default function App() {
     const selected = calcBase[calcService];
     const numericKm = Number(km || 10);
     const multiplier = Number(vehicleMultiplier);
-    const total = Math.round(((selected.fixed + selected.perKm * numericKm) * multiplier) / 50) * 50;
+    let basePrice;
+    if (selected.base !== undefined) {
+      // 0-20 km: sabit 1000 TL, sonrası km başına 22 TL
+      const extraKm = Math.max(0, numericKm - selected.threshold);
+      basePrice = selected.base + extraKm * selected.perKmOver;
+    } else {
+      basePrice = selected.fixed + selected.perKm * numericKm;
+    }
+    const total = Math.round((basePrice * multiplier) / 50) * 50;
     setPrice(total);
   };
 
@@ -188,6 +196,9 @@ export default function App() {
     { to: "/iletisim", label: "İletişim" },
   ];
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <header className="header">
@@ -211,6 +222,32 @@ export default function App() {
               </Link>
             ))}
           </nav>
+          <button
+            className={`hamburger${menuOpen ? " open" : ""}`}
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label="Menüyü aç/kapat"
+            aria-expanded={menuOpen}
+          >
+            <span /><span /><span />
+          </button>
+          {menuOpen && (
+            <div className="mobile-menu">
+              {navLinks.map(({ to, label }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  onClick={closeMenu}
+                  className={
+                    to === "/blog"
+                      ? location.pathname.startsWith("/blog") ? "nav-link active" : "nav-link"
+                      : location.pathname === to ? "nav-link active" : "nav-link"
+                  }
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          )}
           <div className="header-status">
             <span className="live-dot" />
             <span>Aktif</span>
@@ -310,7 +347,7 @@ export default function App() {
                   <label htmlFor="calc-service">Hizmet
                     <select id="calc-service" value={calcService} onChange={(e) => setCalcService(e.target.value)}>
                       <option value="cekici">Araç Çalışmıyor</option>
-                      <option value="lastik">Lastik Patladı</option>
+                      <option value="lastik">Lastik Değişimi</option>
                       <option value="kaza">Kaza Yaptım</option>
                       <option value="yakit">Yakıt Bitti</option>
                       <option value="aku">Akü Bitti</option>
@@ -322,7 +359,7 @@ export default function App() {
                   </label>
                   <label htmlFor="calc-vehicle">Araç tipi
                     <select id="calc-vehicle" value={vehicleMultiplier} onChange={(e) => setVehicleMultiplier(e.target.value)}>
-                      <option value="1">Otomobil / SUV</option>
+                      <option value="1">Otomobil / SUV / Motorsiklet</option>
                       <option value="1.25">Minibüs / Kamyonet</option>
                       <option value="1.65">Kamyon / Tır</option>
                     </select>
@@ -457,7 +494,7 @@ export default function App() {
               <h4>Hizmetler</h4>
               <ul className="footer-links-list">
                 <li><Link to="/hizmetler">Araç Çalışmıyor</Link></li>
-                <li><Link to="/hizmetler">Lastik Patladı</Link></li>
+                <li><Link to="/hizmetler">Lastik Değişimi</Link></li>
                 <li><Link to="/hizmetler">Kaza Yaptım</Link></li>
                 <li><Link to="/hizmetler">Yakıt Bitti</Link></li>
                 <li><Link to="/hizmetler">Akü Bitti</Link></li>

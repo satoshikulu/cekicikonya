@@ -1,3 +1,5 @@
+import useSeo from "../useSeo";
+
 const phoneRaw = "05335107337";
 const whatsappLink = `https://wa.me/90${phoneRaw}`;
 
@@ -47,6 +49,11 @@ const hizmetler = [
 ];
 
 export default function Hizmetler() {
+  useSeo({
+    title: "Hizmetlerimiz | Konya Çekici Yol Yardım Hizmetleri",
+    description: "Konya'da 7/24 çekici, lastik değişimi, akü takviye, yakıt servisi, kaza yardımı ve araç kapı açma hizmeti. Ortalama 12 dk varış süresi.",
+    canonical: "https://www.esedayicekici.com/hizmetler",
+  });
   return (
     <main className="page-content">
       <div className="container">

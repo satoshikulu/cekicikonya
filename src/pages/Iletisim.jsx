@@ -1,8 +1,15 @@
+import useSeo from "../useSeo";
+
 const phoneRaw = "05335107337";
 const phoneText = "0533 510 73 37";
 const whatsappLink = `https://wa.me/90${phoneRaw}`;
 
 export default function Iletisim() {
+  useSeo({
+    title: "İletişim | Konya Ese Dayı Çekici 7/24 Ulaşın",
+    description: "Konya çekici ve yol yardım için 7/24 ulaşın. Telefon: 0533 510 73 37. Mehmet Akif Mah. Akide Sk. No:4 Selçuklu/Konya.",
+    canonical: "https://www.esedayicekici.com/iletisim",
+  });
   return (
     <main className="page-content">
       <div className="container">
