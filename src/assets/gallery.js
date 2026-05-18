@@ -1,67 +1,23 @@
-/**
- * Galeri Görselleri - SEO Optimize Edilmiş
- * 
- * Assets klasöründeki gerçek saha görsellerini kullanır.
- * Dosya adları otomatik olarak SEO uyumlu hale getirildi.
- * 
- * Görsel Optimizasyonu:
- * - Format: PNG (daha sonra WebP'ye dönüştürülebilir)
- * - SEO uyumlu dosya adları
- * - Açıklayıcı ALT metinleri
- */
+import img1 from "./webp/konya-cekici-hizmeti-1.webp";
+import img2 from "./webp/konya-cekici-hizmeti-2.webp";
+import img3 from "./webp/konya-cekici-hizmeti-3.webp";
+import img4 from "./webp/konya-cekici-hizmeti-4.webp";
+import img5 from "./webp/konya-cekici-hizmeti-5.webp";
+import img6 from "./webp/konya-cekici-hizmeti-6.webp";
+import img7 from "./webp/konya-cekici-hizmeti-7.webp";
+import img8 from "./webp/konya-cekici-hizmeti-8.webp";
+import img9 from "./webp/konya-cekici-hizmeti-9.webp";
+import img10 from "./webp/konya-cekici-hizmeti-10.webp";
 
-// Assets klasöründeki görselleri yükle
-import img1 from "./Ekran Alıntısı.PNG";
-import img2 from "./Ekran Alıntısı2.PNG";
-import img3 from "./Ekran Alıntısı3.PNG";
-import img4 from "./Ekran Alıntısı4.PNG";
-import img5 from "./Ekran Alıntısı5.PNG";
-import img6 from "./Ekran Alıntısı6.PNG";
-import img7 from "./Ekran Alıntısı7.PNG";
-import img8 from "./Ekran Alıntısı8.PNG";
-import img9 from "./Ekran Alıntısı9.PNG";
-import img10 from "./Ekran Alıntısı10.PNG";
-
-// SEO uyumlu galeri yapılandırması
 export const galleryImages = [
-  {
-    src: img1,
-    alt: "Konya Ese Dayı Çekici - Profesyonel oto kurtarma hizmeti",
-  },
-  {
-    src: img2,
-    alt: "Konya Oto Kurtarma - Güvenli araç taşıma operasyonu",
-  },
-  {
-    src: img3,
-    alt: "Konya Yol Yardım - Acil çekici hizmeti",
-  },
-  {
-    src: img4,
-    alt: "Ese Dayı Çekici - 7/24 yol yardım desteği",
-  },
-  {
-    src: img5,
-    alt: "Konya Acil Çekici - Hızlı müdahale ekibi",
-  },
-  {
-    src: img6,
-    alt: "Konya Platform Çekici - Araç transfer hizmeti",
-  },
-  {
-    src: img7,
-    alt: "Konya Oto Kurtarma - Profesyonel ekip",
-  },
-  {
-    src: img8,
-    alt: "Ese Dayı Yol Yardım - Güvenilir hizmet",
-  },
-  {
-    src: img9,
-    alt: "Konya Çekici Hizmeti - Saha operasyonu",
-  },
-  {
-    src: img10,
-    alt: "Konya Oto Kurtarma - Araç kurtarma işlemi",
-  },
+  { src: img1,  alt: "Konya Selçuklu oto kurtarma çekici aracı yükleme anı - Ese Dayı" },
+  { src: img2,  alt: "Konya platform çekici ile araç taşıma operasyonu - 7/24 hizmet" },
+  { src: img3,  alt: "Konya acil yol yardım ekibi sahada - Ese Dayı Çekici" },
+  { src: img4,  alt: "Konya Meram bölgesi oto kurtarma çekici hizmeti" },
+  { src: img5,  alt: "Konya çekici aracı otoyolda araç kurtarma müdahalesi" },
+  { src: img6,  alt: "Konya Karatay platform çekici araç transfer işlemi" },
+  { src: img7,  alt: "Ese Dayı Çekici profesyonel ekip Konya yol yardım" },
+  { src: img8,  alt: "Konya gece çekici hizmeti - 7/24 acil oto kurtarma" },
+  { src: img9,  alt: "Konya çekici hizmeti saha operasyonu - Ese Dayı" },
+  { src: img10, alt: "Konya oto kurtarma araç yükleme ve güvenli taşıma" },
 ];

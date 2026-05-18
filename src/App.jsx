@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { galleryImages } from "./assets/gallery";
+import useSeo from "./useSeo";
 import Hakkimizda from "./pages/Hakkimizda";
 import Hizmetler from "./pages/Hizmetler";
 import Ilceler from "./pages/Ilceler";
@@ -23,12 +24,12 @@ const serviceImages = {
 };
 
 const services = [
-  { key: "cekici", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici },
-  { key: "lastik", name: "Lastik Değişimi", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik },
-  { key: "kaza", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza },
-  { key: "yakit", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit },
-  { key: "aku", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku },
-  { key: "kilitli", name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", waMsg: "Merhaba, aracım kilitlendi. Kapı açma hizmeti için fiyat almak istiyorum.", image: serviceImages.kilitli },
+  { key: "cekici", name: "Araç Çalışmıyor", desc: "Motor / arıza", time: "12 dk", waMsg: "Merhaba, araç çalışmıyor. Çekici hizmeti için fiyat almak istiyorum.", image: serviceImages.cekici, imageAlt: "Konya çekici hizmeti - motor arızası olan araç kurtarma" },
+  { key: "lastik", name: "Lastik Değişimi", desc: "Lastik değişimi", time: "14 dk", waMsg: "Merhaba, lastik değişimi için fiyat almak istiyorum.", image: serviceImages.lastik, imageAlt: "Konya lastik değişimi yol yardım hizmeti" },
+  { key: "kaza", name: "Kaza Yaptım", desc: "Acil çekici", time: "10 dk", waMsg: "Merhaba, kaza yaptım. Acil çekici için fiyat almak istiyorum.", image: serviceImages.kaza, imageAlt: "Konya kaza sonrası acil çekici ve oto kurtarma hizmeti" },
+  { key: "yakit", name: "Yakıt Bitti", desc: "Yakıt servisi", time: "11 dk", waMsg: "Merhaba, yakıtım bitti. Yakıt servisi için fiyat almak istiyorum.", image: serviceImages.yakit, imageAlt: "Konya yolda yakıt bitmesi yol yardım servisi" },
+  { key: "aku", name: "Akü Bitti", desc: "Akü takviye", time: "11 dk", waMsg: "Merhaba, aküm bitti. Akü takviye için fiyat almak istiyorum.", image: serviceImages.aku, imageAlt: "Konya akü takviye ve akü değişimi yol yardım hizmeti" },
+  { key: "kilitli", name: "Araç Kilitlendi", desc: "Kapı açma", time: "13 dk", waMsg: "Merhaba, aracım kilitlendi. Kapı açma hizmeti için fiyat almak istiyorum.", image: serviceImages.kilitli, imageAlt: "Konya araç kapı açma ve kilit çözme hizmeti" },
 ];
 
 const calcBase = {
@@ -75,6 +76,15 @@ export default function App() {
   const [b2bTalep, setB2bTalep] = useState("");
 
   const location = useLocation();
+
+  // Anasayfaya dönüldüğünde title/meta reset
+  if (location.pathname === "/") {
+    useSeo({
+      title: "Konya Çekici | 7/24 Konya Oto Kurtarma & Yol Yardım - Ese Dayı",
+      description: "Konya ve ilçelerinde 7/24 acil oto çekici, yol yardım ve oto kurtarma hizmeti. En yakın ekibimiz 15 dakikada yanınızda! Fiyat hesaplamak ve çağırmak için tıklayın.",
+      canonical: "https://www.esedayicekici.com/",
+    });
+  }
 
   const trackEvent = (eventName, params = {}) => {
     if (typeof window === "undefined") return;
@@ -282,7 +292,8 @@ export default function App() {
               <div className="hero-overlay" />
               <div className="container hero-content">
                 <p className="badge">365 Gun 24 Saat Acik</p>
-                <h1>Konya Ese Dayi Cekici Yol Yardim Oto Kurtarma Hizmetleri</h1>
+                <h1>Konya Oto Çekici ve Yol Yardım Hizmetleri</h1>
+                <p className="hero-brand">Ese Dayı</p>
                 <p className={`hero-sub ${locationLive ? "is-live" : ""}`}>{locationText}</p>
                 <div className="quick-emergency">
                   <p className="quick-title">Tek Tık Acil Çağrı Sistemi</p>
@@ -313,7 +324,7 @@ export default function App() {
                     onClick={() => { setActiveService(service); trackEvent("service_select", { service: service.key }); }}
                   >
                     <div className="service-image-wrapper">
-                      <img src={service.image} alt={service.name} className="service-image" loading="lazy" />
+                      <img src={service.image} alt={service.imageAlt} className="service-image" loading="lazy" />
                       <div className="service-image-overlay" />
                     </div>
                     <div className="service-content">
@@ -448,7 +459,7 @@ export default function App() {
                     aria-label={`Görsel ${index + 1}: ${item.alt}`}
                   >
                     <img src={item.src} alt={item.alt} loading="lazy" />
-                    <div className="gallery-overlay"><span className="gallery-zoom-icon">🔍</span></div>
+                    <div className="gallery-overlay"><span className="gallery-zoom-icon" /></div>
                   </figure>
                 ))}
               </div>
