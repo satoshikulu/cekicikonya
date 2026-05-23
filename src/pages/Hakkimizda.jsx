@@ -1,10 +1,10 @@
-import useSeo from "../useSeo";
+﻿import useSeo from "../useSeo";
 
 export default function Hakkimizda() {
   useSeo({
     title: "Hakkımızda | Konya Ese Dayı Çekici Yol Yardım",
     description: "2010'dan bu yana Konya'da profesyonel çekici ve yol yardım hizmeti. 15+ yıl deneyim, ortalama 15 dk varış süresi, 365 gün 24 saat hizmet.",
-    canonical: "https://www.esedayicekici.com/hakkimizda",
+    canonical: "https://www.cekicikonya.com/hakkimizda",
   });
   return (
     <main className="page-content">

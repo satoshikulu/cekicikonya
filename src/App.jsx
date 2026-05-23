@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { galleryImages } from "./assets/gallery";
 import useSeo from "./useSeo";
@@ -83,7 +83,7 @@ export default function App() {
     useSeo({
       title: "Konya Çekici | 7/24 Konya Oto Kurtarma & Yol Yardım - Ese Dayı",
       description: "Konya ve ilçelerinde 7/24 acil oto çekici, yol yardım ve oto kurtarma hizmeti. En yakın ekibimiz 15 dakikada yanınızda! Fiyat hesaplamak ve çağırmak için tıklayın.",
-      canonical: "https://www.esedayicekici.com/",
+      canonical: "https://www.cekicikonya.com/",
     });
   }
 

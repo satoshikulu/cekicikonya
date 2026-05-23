@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+﻿import { useParams, Link } from "react-router-dom";
 import { blogYazilari } from "./Blog";
 import useSeo from "../useSeo";
 
@@ -9,17 +9,17 @@ export default function BlogDetay() {
   useSeo(yazi ? {
     title: `${yazi.baslik} | Konya Ese Dayı Çekici`,
     description: yazi.ozet,
-    canonical: `https://www.esedayicekici.com/blog/${yazi.slug}`,
+    canonical: `https://www.cekicikonya.com/blog/${yazi.slug}`,
     blogPost: {
       title: yazi.baslik,
       description: yazi.ozet,
       date: yazi.tarih,
-      url: `https://www.esedayicekici.com/blog/${yazi.slug}`,
+      url: `https://www.cekicikonya.com/blog/${yazi.slug}`,
     },
   } : {
     title: "Yazı Bulunamadı | Konya Ese Dayı Çekici",
     description: "Aradığınız blog yazısı bulunamadı.",
-    canonical: "https://www.esedayicekici.com/blog",
+    canonical: "https://www.cekicikonya.com/blog",
   });
 
   if (!yazi) {

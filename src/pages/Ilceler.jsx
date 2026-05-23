@@ -1,4 +1,4 @@
-import useSeo from "../useSeo";
+﻿import useSeo from "../useSeo";
 
 const phoneRaw = "05335107337";
 
@@ -54,7 +54,7 @@ export default function Ilceler() {
   useSeo({
     title: "Hizmet Bölgelerimiz | Konya Tüm İlçelere Çekici Hizmeti",
     description: "Konya merkez, Selçuklu, Meram, Karatay ve tüm ilçelere 7/24 çekici ve yol yardım hizmeti. Tahmini varış sürelerini öğrenin.",
-    canonical: "https://www.esedayicekici.com/ilceler",
+    canonical: "https://www.cekicikonya.com/ilceler",
   });
   return (
     <main className="page-content">

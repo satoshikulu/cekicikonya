@@ -1,4 +1,4 @@
-export default function useSeo({ title, description, canonical, blogPost }) {
+﻿export default function useSeo({ title, description, canonical, blogPost }) {
   if (typeof document === "undefined") return;
 
   document.title = title;
@@ -45,12 +45,12 @@ export default function useSeo({ title, description, canonical, blogPost }) {
       "author": {
         "@type": "Organization",
         "name": "Konya Ese Dayı Çekici",
-        "url": "https://www.esedayicekici.com/"
+        "url": "https://www.cekicikonya.com/"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Konya Ese Dayı Çekici",
-        "url": "https://www.esedayicekici.com/"
+        "url": "https://www.cekicikonya.com/"
       },
       "mainEntityOfPage": {
         "@type": "WebPage",

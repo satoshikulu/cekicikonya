@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { galleryImages } from "../assets/gallery";
 import useSeo from "../useSeo";
 
@@ -6,7 +6,7 @@ export default function Galeri() {
   useSeo({
     title: "Galeri | Konya Ese Dayı Çekici Operasyon Görüntüleri",
     description: "Sahadan gerçek çekici ve yol yardım operasyon görüntüleri. Profesyonel ekip ve güvenli taşıma sürecimiz.",
-    canonical: "https://www.esedayicekici.com/galeri",
+    canonical: "https://www.cekicikonya.com/galeri",
   });
   const [lightboxIndex, setLightboxIndex] = useState(null);
 

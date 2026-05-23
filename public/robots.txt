@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://www.esedayicekici.com/sitemap.xml
+Sitemap: https://www.cekicikonya.com/sitemap.xml

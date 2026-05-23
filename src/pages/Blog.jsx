@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import useSeo from "../useSeo";
 
 export const blogYazilari = [
@@ -43,7 +43,7 @@ export default function Blog() {
   useSeo({
     title: "Blog | Konya Çekici ve Yol Yardım Rehberi",
     description: "Araç arızası, lastik patlaması, akü sorunları ve trafik kazası sonrası yapılması gerekenler. Konya yol yardım rehberi.",
-    canonical: "https://www.esedayicekici.com/blog",
+    canonical: "https://www.cekicikonya.com/blog",
   });
   return (
     <main className="page-content">
