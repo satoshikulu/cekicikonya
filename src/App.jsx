@@ -214,8 +214,8 @@ export default function App() {
       <header className="header">
         <div className="container header-inner">
           <Link to="/" className="brand">
-            <div className="brand-mark">ESE DAYI</div>
-            <p>Konya Oto Kurtarma</p>
+            <div className="brand-mark">Konya Çekici</div>
+            <p>Ese Dayı</p>
           </Link>
           <nav className="navbar">
             {navLinks.map(({ to, label }) => (

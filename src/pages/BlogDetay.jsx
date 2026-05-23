@@ -10,6 +10,12 @@ export default function BlogDetay() {
     title: `${yazi.baslik} | Konya Ese Dayı Çekici`,
     description: yazi.ozet,
     canonical: `https://www.esedayicekici.com/blog/${yazi.slug}`,
+    blogPost: {
+      title: yazi.baslik,
+      description: yazi.ozet,
+      date: yazi.tarih,
+      url: `https://www.esedayicekici.com/blog/${yazi.slug}`,
+    },
   } : {
     title: "Yazı Bulunamadı | Konya Ese Dayı Çekici",
     description: "Aradığınız blog yazısı bulunamadı.",

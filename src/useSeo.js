@@ -1,4 +1,4 @@
-export default function useSeo({ title, description, canonical }) {
+export default function useSeo({ title, description, canonical, blogPost }) {
   if (typeof document === "undefined") return;
 
   document.title = title;
@@ -25,5 +25,39 @@ export default function useSeo({ title, description, canonical }) {
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonical);
+  }
+
+  // BlogPosting schema — blog detay sayfaları için
+  const existingBlogSchema = document.querySelector('script[data-schema="blogpost"]');
+  if (existingBlogSchema) existingBlogSchema.remove();
+
+  if (blogPost) {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-schema", "blogpost");
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": blogPost.title,
+      "description": blogPost.description,
+      "datePublished": blogPost.date,
+      "dateModified": blogPost.date,
+      "author": {
+        "@type": "Organization",
+        "name": "Konya Ese Dayı Çekici",
+        "url": "https://www.esedayicekici.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Konya Ese Dayı Çekici",
+        "url": "https://www.esedayicekici.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": blogPost.url
+      },
+      "url": blogPost.url
+    });
+    document.head.appendChild(script);
   }
 }
