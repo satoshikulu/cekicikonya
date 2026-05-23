@@ -54,10 +54,16 @@ body {
 }
 
 .brand-logo {
-  height: 70px;
+  height: 85px;
   width: auto;
   display: block;
   filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .brand-logo {
+    height: 52px;
+  }
 }
 
 .brand-text {
