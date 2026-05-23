@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { galleryImages } from "./assets/gallery";
 import useSeo from "./useSeo";
+import logoSvg from "./assets/logo.svg";
 import Hakkimizda from "./pages/Hakkimizda";
 import Hizmetler from "./pages/Hizmetler";
 import Ilceler from "./pages/Ilceler";
@@ -214,8 +215,11 @@ export default function App() {
       <header className="header">
         <div className="container header-inner">
           <Link to="/" className="brand">
-            <div className="brand-mark">Konya Çekici</div>
-            <p>Ese Dayı</p>
+            <img src={logoSvg} alt="Konya Çekici Ese Dayı Logo" className="brand-logo" />
+            <div className="brand-text">
+              <div className="brand-mark">Konya Çekici</div>
+              <p>Ese Dayı</p>
+            </div>
           </Link>
           <nav className="navbar">
             {navLinks.map(({ to, label }) => (
@@ -491,8 +495,7 @@ export default function App() {
           <div className="footer-grid">
             <div className="footer-section">
               <div className="footer-brand">
-                <div className="footer-logo">ESE DAYI</div>
-                <p className="footer-tagline">Konya Oto Kurtarma</p>
+                <img src={logoSvg} alt="Konya Çekici Ese Dayı Logo" className="footer-logo-img" />
               </div>
               <p className="footer-desc">Konya merkez ve tüm ilçelerde 365 gün 24 saat profesyonel oto kurtarma ve yol yardım hizmeti.</p>
               <div className="footer-badges">
