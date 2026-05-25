@@ -553,6 +553,15 @@ export default function App() {
               <Link to="/iletisim">İletişim</Link>
             </div>
           </div>
+          <div className="footer-credit">
+            <a
+              href="https://wa.me/905556874803"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Created by Y.Altındl
+            </a>
+          </div>
         </div>
         <div className="map-wrap">
           <iframe
